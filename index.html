@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bears Den - Your School News Hub! 🐻</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .hover-grow {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }
+        }
+        
+        .wiggle {
+            animation: wiggle 0.5s ease-in-out;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .notification-badge {
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="text-6xl bounce-in">🐻</div>
+                    <div>
+                        <h1 class="text-4xl font-bold gradient-text">Bears Den</h1>
+                        <p class="text-sm text-gray-600 font-medium">Your School News Hub!</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold hover-grow" onclick="openCreateModal()">
+                        ✏️ Create Post
+                    </button>
+                    <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover-grow" onclick="openModerateModal()">
+                        🛡️ Moderate
+                    </button>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-bold hover-grow pulse-glow" onclick="showNotification('🎉 You\'re awesome!')">
+                        Subscribe! ⭐
+                    </button>
+                    <div class="relative">
+                        <button class="text-3xl hover-grow" onclick="wiggleElement(this)">🔔</button>
+                        <span class="notification-badge absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex space-x-1 overflow-x-auto py-2">
+                <button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('all')">
+                    🏠 All News
+                </button>
+                <button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('videos')">
+                    🎬 Videos
+                </button>
+                <button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('articles')">
+                    📰 Articles
+                </button>
+                <button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('podcasts')">
+                    🎧 Podcasts
+                </button>
+                <button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('photos')">
+                    📸 Photos
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breaking News Banner -->
+        <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-2xl p-6 mb-8 hover-grow">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl notification-badge">🚨</span>
+                <div>
+                    <h2 class="text-2xl font-bold">BREAKING: Pizza Day Extended!</h2>
+                    <p class="text-lg">Due to popular demand, pizza will be served all week! 🍕</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Featured Video -->
+            <div class="content-card bg-white rounded-2xl shadow-xl overflow-hidden hover-grow" data-type="videos">
+                <div class="bg-gradient-to-r from-red-400 to-pink-500 h-48 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-2">🎬</div>
+                        <button class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full font-bold" onclick="playVideo()">
+                            ▶️ Watch Now!
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">School Talent Show Highlights!</h3>
+                    <p class="text-gray-600 mb-4">Check out the amazing performances from last week's talent show! 🌟</p>
+                    <div class="flex items-center justify-between">
+                        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold">🔥 Trending</span>
+                        <button class="text-2xl hover-grow" onclick="likeContent(this)">❤️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Article -->
+            <div class="content-card bg-white rounded-2xl shadow-xl overflow-hidden hover-grow" data-type="articles">
+                <div class="bg-gradient-to-r from-green-400 to-blue-500 h-48 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-2">📰</div>
+                        <p class="text-lg font-bold">New Playground Equipment!</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Epic New Playground Opens Monday!</h3>
+                    <p class="text-gray-600 mb-4">Get ready for the coolest swings, slides, and climbing walls ever! 🏰</p>
+                    <div class="flex items-center justify-between">
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-bold">📈 Popular</span>
+                        <button class="text-2xl hover-grow" onclick="likeContent(this)">❤️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Podcast -->
+            <div class="content-card bg-white rounded-2xl shadow-xl overflow-hidden hover-grow" data-type="podcasts">
+                <div class="bg-gradient-to-r from-purple-400 to-indigo-500 h-48 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <div class="text-6xl mb-2">🎧</div>
+                        <button class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full font-bold" onclick="playPodcast()">
+                            ▶️ Listen Now!
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Student Spotlight: Maya's Science Fair Win!</h3>
+                    <p class="text-gray-600 mb-4">Hear Maya talk about her volcano project that won first place! 🌋</p>
+                    <div class="flex items-center justify-between">
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-bold">🎙️ New</span>
+                        <button class="text-2xl hover-grow" onclick="likeContent(this)">❤️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- More Content Section -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">More Awesome Content! 🚀</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Photo Gallery -->
+                <div class="content-card bg-gradient-to-br from-yellow-300 to-orange-400 rounded-xl p-6 hover-grow" data-type="photos">
+                    <div class="text-center text-white">
+                        <div class="text-4xl mb-3">📸</div>
+                        <h3 class="text-xl font-bold mb-2">Field Trip Photo Gallery</h3>
+                        <p class="mb-4">Check out all the fun pics from our museum trip!</p>
+                        <button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full font-bold" onclick="openGallery()">
+                            View Photos 📷
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sports Update -->
+                <div class="content-card bg-gradient-to-br from-blue-400 to-green-400 rounded-xl p-6 hover-grow" data-type="articles">
+                    <div class="text-center text-white">
+                        <div class="text-4xl mb-3">⚽</div>
+                        <h3 class="text-xl font-bold mb-2">Bears Win Championship!</h3>
+                        <p class="mb-4">Our soccer team crushed it in the finals! 🏆</p>
+                        <button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full font-bold" onclick="readArticle()">
+                            Read More 📖
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Dashboard -->
+        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl shadow-xl p-6 mb-8 text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">🎯 Student Creator Dashboard</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center hover-grow">
+                    <div class="text-4xl mb-3">📝</div>
+                    <h3 class="text-xl font-bold mb-2">Your Posts</h3>
+                    <p class="text-3xl font-bold text-yellow-300">12</p>
+                    <p class="text-sm opacity-80">Published this month</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center hover-grow">
+                    <div class="text-4xl mb-3">👀</div>
+                    <h3 class="text-xl font-bold mb-2">Total Views</h3>
+                    <p class="text-3xl font-bold text-green-300">1,247</p>
+                    <p class="text-sm opacity-80">Students reached</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center hover-grow">
+                    <div class="text-4xl mb-3">⭐</div>
+                    <h3 class="text-xl font-bold mb-2">Likes Earned</h3>
+                    <p class="text-3xl font-bold text-pink-300">89</p>
+                    <p class="text-sm opacity-80">Keep it up!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Poll -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">🗳️ Quick Poll: What's Your Favorite Lunch?</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button class="poll-option bg-red-100 hover:bg-red-200 p-4 rounded-xl text-center hover-grow" onclick="vote('pizza')">
+                    <div class="text-3xl mb-2">🍕</div>
+                    <p class="font-bold">Pizza</p>
+                    <p class="text-sm text-gray-600">45%</p>
+                </button>
+                <button class="poll-option bg-yellow-100 hover:bg-yellow-200 p-4 rounded-xl text-center hover-grow" onclick="vote('tacos')">
+                    <div class="text-3xl mb-2">🌮</div>
+                    <p class="font-bold">Tacos</p>
+                    <p class="text-sm text-gray-600">30%</p>
+                </button>
+                <button class="poll-option bg-green-100 hover:bg-green-200 p-4 rounded-xl text-center hover-grow" onclick="vote('burgers')">
+                    <div class="text-3xl mb-2">🍔</div>
+                    <p class="font-bold">Burgers</p>
+                    <p class="text-sm text-gray-600">20%</p>
+                </button>
+                <button class="poll-option bg-purple-100 hover:bg-purple-200 p-4 rounded-xl text-center hover-grow" onclick="vote('salad')">
+                    <div class="text-3xl mb-2">🥗</div>
+                    <p class="font-bold">Salad</p>
+                    <p class="text-sm text-gray-600">5%</p>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-4xl mb-4">🐻</div>
+            <h3 class="text-2xl font-bold mb-2">Bears Den News</h3>
+            <p class="text-gray-300 mb-4">Keeping our school connected, one story at a time!</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full font-bold hover-grow">Follow Us! 📱</button>
+                <button class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full font-bold hover-grow">Submit Story 📝</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Create Post Modal -->
+    <div id="createModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-t-2xl">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold">✏️ Create Your Post!</h2>
+                    <button onclick="closeCreateModal()" class="text-2xl hover-grow">❌</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-bold mb-2">📝 Post Type</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <button class="post-type-btn bg-red-100 hover:bg-red-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('article', this)">
+                            <div class="text-2xl mb-1">📰</div>
+                            <p class="text-sm font-bold">Article</p>
+                        </button>
+                        <button class="post-type-btn bg-blue-100 hover:bg-blue-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('video', this)">
+                            <div class="text-2xl mb-1">🎬</div>
+                            <p class="text-sm font-bold">Video</p>
+                        </button>
+                        <button class="post-type-btn bg-purple-100 hover:bg-purple-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('podcast', this)">
+                            <div class="text-2xl mb-1">🎧</div>
+                            <p class="text-sm font-bold">Podcast</p>
+                        </button>
+                        <button class="post-type-btn bg-yellow-100 hover:bg-yellow-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('photo', this)">
+                            <div class="text-2xl mb-1">📸</div>
+                            <p class="text-sm font-bold">Photo</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2">🎯 Title</label>
+                    <input type="text" class="w-full p-3 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none" placeholder="What's your awesome story about?">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2">📖 Content</label>
+                    <textarea class="w-full p-3 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none h-32" placeholder="Tell your story! What happened? Who was involved? Why is it cool?"></textarea>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-bold mb-2">🏷️ Tags</label>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)">#sports</button>
+                        <button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)">#academics</button>
+                        <button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)">#events</button>
+                        <button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)">#fun</button>
+                        <button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)">#breaking</button>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover-grow flex-1" onclick="submitPost()">
+                        🚀 Publish Post!
+                    </button>
+                    <button class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-6 py-3 rounded-xl font-bold hover-grow" onclick="saveDraft()">
+                        💾 Save Draft
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Moderation Modal -->
+    <div id="moderateModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-t-2xl">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold">🛡️ Student Moderation Center</h2>
+                    <button onclick="closeModerationModal()" class="text-2xl hover-grow">❌</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-yellow-100 p-4 rounded-xl text-center">
+                        <div class="text-3xl mb-2">⏳</div>
+                        <h3 class="font-bold text-gray-800">Pending Review</h3>
+                        <p class="text-2xl font-bold text-orange-600">5</p>
+                    </div>
+                    <div class="bg-green-100 p-4 rounded-xl text-center">
+                        <div class="text-3xl mb-2">✅</div>
+                        <h3 class="font-bold text-gray-800">Approved Today</h3>
+                        <p class="text-2xl font-bold text-green-600">12</p>
+                    </div>
+                    <div class="bg-red-100 p-4 rounded-xl text-center">
+                        <div class="text-3xl mb-2">🚫</div>
+                        <h3 class="font-bold text-gray-800">Needs Changes</h3>
+                        <p class="text-2xl font-bold text-red-600">2</p>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-bold text-gray-800 mb-4">📋 Posts Awaiting Review</h3>
+                <div class="space-y-4">
+                    <div class="border-2 border-gray-200 rounded-xl p-4 hover-grow">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-800 mb-2">🏀 Basketball Team Wins Big!</h4>
+                                <p class="text-gray-600 text-sm mb-2">By: Alex M. • Article • 2 hours ago</p>
+                                <p class="text-gray-700">Our Bears basketball team crushed the Eagles 85-62 in last night's championship game...</p>
+                            </div>
+                            <div class="flex space-x-2 ml-4">
+                                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold" onclick="approvePost(this)">✅ Approve</button>
+                                <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold" onclick="requestChanges(this)">✏️ Edit</button>
+                                <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold" onclick="rejectPost(this)">❌ Reject</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-gray-200 rounded-xl p-4 hover-grow">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-800 mb-2">🎭 Drama Club Auditions Next Week</h4>
+                                <p class="text-gray-600 text-sm mb-2">By: Sarah K. • Article • 4 hours ago</p>
+                                <p class="text-gray-700">Get ready to shine! Drama club auditions for our spring musical are happening...</p>
+                            </div>
+                            <div class="flex space-x-2 ml-4">
+                                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold" onclick="approvePost(this)">✅ Approve</button>
+                                <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold" onclick="requestChanges(this)">✏️ Edit</button>
+                                <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold" onclick="rejectPost(this)">❌ Reject</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="fixed top-20 right-4 bg-green-500 text-white px-6 py-4 rounded-xl shadow-xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex items-center space-x-2">
+            <span class="text-xl">🎉</span>
+            <span id="notification-text" class="font-bold"></span>
+        </div>
+    </div>
+
+    <script>
+        // Interactive Functions
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const text = document.getElementById('notification-text');
+            text.textContent = message;
+            
+            notification.classList.remove('translate-x-full');
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+            }, 3000);
+        }
+
+        function wiggleElement(element) {
+            element.classList.add('wiggle');
+            setTimeout(() => {
+                element.classList.remove('wiggle');
+            }, 500);
+        }
+
+        function likeContent(button) {
+            button.textContent = '💖';
+            button.classList.add('bounce-in');
+            showNotification('Thanks for the love! 💕');
+            
+            setTimeout(() => {
+                button.textContent = '❤️';
+                button.classList.remove('bounce-in');
+            }, 1000);
+        }
+
+        function playVideo() {
+            showNotification('🎬 Video starting... Get ready for awesome content!');
+        }
+
+        function playPodcast() {
+            showNotification('🎧 Podcast loading... Time to learn something cool!');
+        }
+
+        function openGallery() {
+            showNotification('📸 Opening photo gallery... So many memories!');
+        }
+
+        function readArticle() {
+            showNotification('📖 Loading article... Great choice!');
+        }
+
+        function vote(option) {
+            showNotification(`🗳️ Thanks for voting for ${option}! Your voice matters!`);
+            
+            // Add visual feedback
+            event.target.classList.add('pulse-glow');
+            setTimeout(() => {
+                event.target.classList.remove('pulse-glow');
+            }, 2000);
+        }
+
+        function showSection(type) {
+            const cards = document.querySelectorAll('.content-card');
+            
+            if (type === 'all') {
+                cards.forEach(card => {
+                    card.style.display = 'block';
+                    card.classList.add('bounce-in');
+                });
+                showNotification('📰 Showing all content! So much to explore!');
+            } else {
+                cards.forEach(card => {
+                    if (card.dataset.type === type) {
+                        card.style.display = 'block';
+                        card.classList.add('bounce-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                showNotification(`🎯 Filtered to ${type}! Perfect choice!`);
+            }
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                cards.forEach(card => card.classList.remove('bounce-in'));
+            }, 600);
+        }
+
+        // Add some random fun interactions
+        setInterval(() => {
+            const emojis = ['🌟', '⭐', '✨', '🎉', '🚀', '💫'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Occasionally show encouraging messages
+            if (Math.random() < 0.1) {
+                showNotification(`You're doing great! ${randomEmoji}`);
+            }
+        }, 30000);
+
+        // Create Post Modal Functions
+        function openCreateModal() {
+            document.getElementById('createModal').classList.remove('hidden');
+            showNotification('✏️ Time to create something awesome!');
+        }
+
+        function closeCreateModal() {
+            document.getElementById('createModal').classList.add('hidden');
+        }
+
+        function selectPostType(type, button) {
+            // Remove selection from all buttons
+            document.querySelectorAll('.post-type-btn').forEach(btn => {
+                btn.classList.remove('ring-4', 'ring-blue-400');
+            });
+            
+            // Add selection to clicked button
+            button.classList.add('ring-4', 'ring-blue-400');
+            showNotification(`📝 ${type} selected! Great choice!`);
+        }
+
+        function toggleTag(button) {
+            if (button.classList.contains('bg-blue-500')) {
+                button.classList.remove('bg-blue-500', 'text-white');
+                button.classList.add('bg-gray-200');
+            } else {
+                button.classList.remove('bg-gray-200');
+                button.classList.add('bg-blue-500', 'text-white');
+            }
+        }
+
+        function submitPost() {
+            showNotification('🚀 Post submitted for review! You\'re making a difference!');
+            closeCreateModal();
+            
+            // Update dashboard stats
+            const postsCount = document.querySelector('.text-yellow-300');
+            if (postsCount) {
+                postsCount.textContent = parseInt(postsCount.textContent) + 1;
+            }
+        }
+
+        function saveDraft() {
+            showNotification('💾 Draft saved! You can finish it later!');
+            closeCreateModal();
+        }
+
+        // Moderation Modal Functions
+        function openModerateModal() {
+            document.getElementById('moderateModal').classList.remove('hidden');
+            showNotification('🛡️ Welcome to the moderation center!');
+        }
+
+        function closeModerationModal() {
+            document.getElementById('moderateModal').classList.add('hidden');
+        }
+
+        function approvePost(button) {
+            const postCard = button.closest('.border-2');
+            postCard.style.background = 'linear-gradient(to right, #dcfce7, #bbf7d0)';
+            postCard.innerHTML = '<div class="text-center py-8"><div class="text-4xl mb-2">✅</div><h3 class="text-xl font-bold text-green-600">Post Approved!</h3><p class="text-green-700">This story is now live on Bears Den!</p></div>';
+            showNotification('✅ Post approved! Great job keeping quality high!');
+        }
+
+        function requestChanges(button) {
+            const postCard = button.closest('.border-2');
+            postCard.style.background = 'linear-gradient(to right, #fef3c7, #fde68a)';
+            showNotification('✏️ Feedback sent to author for improvements!');
+        }
+
+        function rejectPost(button) {
+            const postCard = button.closest('.border-2');
+            postCard.style.background = 'linear-gradient(to right, #fecaca, #fca5a5)';
+            showNotification('❌ Post rejected. Author will be notified kindly!');
+        }
+
+        // Welcome message
+        setTimeout(() => {
+            showNotification('🐻 Welcome to Bears Den! Ready for some awesome news?');
+        }, 1000);
+    </script>
+</body>
+</html>
