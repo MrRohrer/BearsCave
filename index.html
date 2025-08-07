@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Bears Den - Your School News Hub! 🐻&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;display=swap');</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Fredoka', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bounce-in {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: bounceIn 0.6s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes bounceIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: scale(0.3); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: scale(1.05); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>70% { transform: scale(0.9); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: scale(1); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hover-grow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hover-grow:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 40px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pulse-glow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pulseGlow 2s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulseGlow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.wiggle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: wiggle 0.5s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes wiggle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { transform: rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>25% { transform: rotate(-3deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>75% { transform: rotate(3deg); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: 300% 300%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: gradientShift 3s ease infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes gradientShift {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { background-position: 0% 50%; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { background-position: 100% 50%; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.notification-badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: bounce 1s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes bounce {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 20%, 50%, 80%, 100% { transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>40% { transform: translateY(-10px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>60% { transform: translateY(-5px); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400 min-h-screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="bg-white/90 backdrop-blur-sm shadow-xl sticky top-0 z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-4 py-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl bounce-in"&gt;🐻&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h1 class="text-4xl font-bold gradient-text"&gt;Bears Den&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-600 font-medium"&gt;Your School News Hub!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold hover-grow" onclick="openCreateModal()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>✏️ Create Post</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover-grow" onclick="openModerateModal()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>🛡️ Moderate</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-bold hover-grow pulse-glow" onclick="showNotification('🎉 You\'re awesome!')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Subscribe! ⭐</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="text-3xl hover-grow" onclick="wiggleElement(this)"&gt;🔔&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="notification-badge absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold"&gt;3&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex space-x-1 overflow-x-auto py-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('all')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>🏠 All News</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('videos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>🎬 Videos</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('articles')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>📰 Articles</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('podcasts')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>🎧 Podcasts</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="nav-btn bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold whitespace-nowrap hover-grow" onclick="showSection('photos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>📸 Photos</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="container mx-auto px-4 py-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Breaking News Banner --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-2xl p-6 mb-8 hover-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-2xl notification-badge"&gt;🚨&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl font-bold"&gt;BREAKING: Pizza Day Extended!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg"&gt;Due to popular demand, pizza will be served all week! 🍕&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Featured Content Grid --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Featured Video --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-card bg-white rounded-2xl shadow-xl overflow-hidden hover-grow" data-type="videos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gradient-to-r from-red-400 to-pink-500 h-48 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-6xl mb-2"&gt;🎬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full font-bold" onclick="playVideo()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>▶️ Watch Now!</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold text-gray-800 mb-2"&gt;School Talent Show Highlights!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4"&gt;Check out the amazing performances from last week's talent show! 🌟&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold"&gt;🔥 Trending&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="text-2xl hover-grow" onclick="likeContent(this)"&gt;❤️&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Featured Article --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-card bg-white rounded-2xl shadow-xl overflow-hidden hover-grow" data-type="articles"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gradient-to-r from-green-400 to-blue-500 h-48 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-6xl mb-2"&gt;📰&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-bold"&gt;New Playground Equipment!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold text-gray-800 mb-2"&gt;Epic New Playground Opens Monday!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4"&gt;Get ready for the coolest swings, slides, and climbing walls ever! 🏰&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-bold"&gt;📈 Popular&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="text-2xl hover-grow" onclick="likeContent(this)"&gt;❤️&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Featured Podcast --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="content-card bg-white rounded-2xl shadow-xl overflow-hidden hover-grow" data-type="podcasts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gradient-to-r from-purple-400 to-indigo-500 h-48 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-6xl mb-2"&gt;🎧&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full font-bold" onclick="playPodcast()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>▶️ Listen Now!</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold text-gray-800 mb-2"&gt;Student Spotlight: Maya's Science Fair Win!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4"&gt;Hear Maya talk about her volcano project that won first place! 🌋&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-bold"&gt;🎙️ New&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="text-2xl hover-grow" onclick="likeContent(this)"&gt;❤️&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- More Content Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-800 mb-6 text-center"&gt;More Awesome Content! 🚀&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Photo Gallery --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="content-card bg-gradient-to-br from-yellow-300 to-orange-400 rounded-xl p-6 hover-grow" data-type="photos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-4xl mb-3"&gt;📸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Field Trip Photo Gallery&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="mb-4"&gt;Check out all the fun pics from our museum trip!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full font-bold" onclick="openGallery()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>View Photos 📷</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Sports Update --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="content-card bg-gradient-to-br from-blue-400 to-green-400 rounded-xl p-6 hover-grow" data-type="articles"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-4xl mb-3"&gt;⚽&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Bears Win Championship!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="mb-4"&gt;Our soccer team crushed it in the finals! 🏆&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full font-bold" onclick="readArticle()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Read More 📖</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Student Dashboard --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl shadow-xl p-6 mb-8 text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold mb-6 text-center"&gt;🎯 Student Creator Dashboard&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center hover-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl mb-3"&gt;📝&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Your Posts&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-yellow-300"&gt;12&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm opacity-80"&gt;Published this month&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center hover-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl mb-3"&gt;👀&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Total Views&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-green-300"&gt;1,247&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm opacity-80"&gt;Students reached&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center hover-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl mb-3"&gt;⭐&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Likes Earned&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-pink-300"&gt;89&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm opacity-80"&gt;Keep it up!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Interactive Poll --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-2xl shadow-xl p-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold text-gray-800 mb-4 text-center"&gt;🗳️ Quick Poll: What's Your Favorite Lunch?&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-2 md:grid-cols-4 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="poll-option bg-red-100 hover:bg-red-200 p-4 rounded-xl text-center hover-grow" onclick="vote('pizza')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl mb-2"&gt;🍕&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-bold"&gt;Pizza&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600"&gt;45%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="poll-option bg-yellow-100 hover:bg-yellow-200 p-4 rounded-xl text-center hover-grow" onclick="vote('tacos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl mb-2"&gt;🌮&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-bold"&gt;Tacos&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600"&gt;30%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="poll-option bg-green-100 hover:bg-green-200 p-4 rounded-xl text-center hover-grow" onclick="vote('burgers')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl mb-2"&gt;🍔&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-bold"&gt;Burgers&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600"&gt;20%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="poll-option bg-purple-100 hover:bg-purple-200 p-4 rounded-xl text-center hover-grow" onclick="vote('salad')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl mb-2"&gt;🥗&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-bold"&gt;Salad&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-600"&gt;5%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-gray-800 text-white py-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-4xl mb-4"&gt;🐻&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;Bears Den News&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-4"&gt;Keeping our school connected, one story at a time!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full font-bold hover-grow"&gt;Follow Us! 📱&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full font-bold hover-grow"&gt;Submit Story 📝&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Create Post Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="createModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-t-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl font-bold"&gt;✏️ Create Your Post!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="closeCreateModal()" class="text-2xl hover-grow"&gt;❌&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-gray-700 font-bold mb-2"&gt;📝 Post Type&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="grid grid-cols-2 md:grid-cols-4 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="post-type-btn bg-red-100 hover:bg-red-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('article', this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-2xl mb-1"&gt;📰&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-bold"&gt;Article&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="post-type-btn bg-blue-100 hover:bg-blue-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('video', this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-2xl mb-1"&gt;🎬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-bold"&gt;Video&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="post-type-btn bg-purple-100 hover:bg-purple-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('podcast', this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-2xl mb-1"&gt;🎧&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-bold"&gt;Podcast&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="post-type-btn bg-yellow-100 hover:bg-yellow-200 p-3 rounded-xl text-center hover-grow" onclick="selectPostType('photo', this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-2xl mb-1"&gt;📸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-bold"&gt;Photo&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-gray-700 font-bold mb-2"&gt;🎯 Title&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" class="w-full p-3 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none" placeholder="What's your awesome story about?"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-gray-700 font-bold mb-2"&gt;📖 Content&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;textarea class="w-full p-3 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none h-32" placeholder="Tell your story! What happened? Who was involved? Why is it cool?"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-gray-700 font-bold mb-2"&gt;🏷️ Tags&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-wrap gap-2 mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)"&gt;#sports&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)"&gt;#academics&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)"&gt;#events&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)"&gt;#fun&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="tag-btn bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded-full text-sm" onclick="toggleTag(this)"&gt;#breaking&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover-grow flex-1" onclick="submitPost()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>🚀 Publish Post!</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-6 py-3 rounded-xl font-bold hover-grow" onclick="saveDraft()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>💾 Save Draft</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Moderation Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="moderateModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-t-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl font-bold"&gt;🛡️ Student Moderation Center&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="closeModerationModal()" class="text-2xl hover-grow"&gt;❌&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-yellow-100 p-4 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-3xl mb-2"&gt;⏳&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-gray-800"&gt;Pending Review&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-orange-600"&gt;5&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-green-100 p-4 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-3xl mb-2"&gt;✅&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-gray-800"&gt;Approved Today&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-green-600"&gt;12&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-red-100 p-4 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-3xl mb-2"&gt;🚫&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-gray-800"&gt;Needs Changes&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-red-600"&gt;2&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-bold text-gray-800 mb-4"&gt;📋 Posts Awaiting Review&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="border-2 border-gray-200 rounded-xl p-4 hover-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-start justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-gray-800 mb-2"&gt;🏀 Basketball Team Wins Big!&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-600 text-sm mb-2"&gt;By: Alex M. • Article • 2 hours ago&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-700"&gt;Our Bears basketball team crushed the Eagles 85-62 in last night's championship game...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex space-x-2 ml-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold" onclick="approvePost(this)"&gt;✅ Approve&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold" onclick="requestChanges(this)"&gt;✏️ Edit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold" onclick="rejectPost(this)"&gt;❌ Reject&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="border-2 border-gray-200 rounded-xl p-4 hover-grow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-start justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-gray-800 mb-2"&gt;🎭 Drama Club Auditions Next Week&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-600 text-sm mb-2"&gt;By: Sarah K. • Article • 4 hours ago&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-700"&gt;Get ready to shine! Drama club auditions for our spring musical are happening...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex space-x-2 ml-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold" onclick="approvePost(this)"&gt;✅ Approve&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold" onclick="requestChanges(this)"&gt;✏️ Edit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold" onclick="rejectPost(this)"&gt;❌ Reject&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Notification Toast --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="notification" class="fixed top-20 right-4 bg-green-500 text-white px-6 py-4 rounded-xl shadow-xl transform translate-x-full transition-transform duration-300 z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center space-x-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-xl"&gt;🎉&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="notification-text" class="font-bold"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Interactive Functions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showNotification(message) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const notification = document.getElementById('notification');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const text = document.getElementById('notification-text');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text.textContent = message;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>notification.classList.remove('translate-x-full');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>notification.classList.add('translate-x-full');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 3000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function wiggleElement(element) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>element.classList.add('wiggle');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>element.classList.remove('wiggle');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 500);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function likeContent(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.textContent = '💖';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.add('bounce-in');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('Thanks for the love! 💕');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.textContent = '❤️';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.remove('bounce-in');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function playVideo() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('🎬 Video starting... Get ready for awesome content!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function playPodcast() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('🎧 Podcast loading... Time to learn something cool!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openGallery() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('📸 Opening photo gallery... So many memories!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function readArticle() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('📖 Loading article... Great choice!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function vote(option) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification(`🗳️ Thanks for voting for ${option}! Your voice matters!`);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Add visual feedback</p>
+<p class="p1"><span class="Apple-converted-space">            </span>event.target.classList.add('pulse-glow');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>event.target.classList.remove('pulse-glow');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 2000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showSection(type) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const cards = document.querySelectorAll('.content-card');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (type === 'all') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cards.forEach(card =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>card.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>card.classList.add('bounce-in');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showNotification('📰 Showing all content! So much to explore!');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cards.forEach(card =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (card.dataset.type === type) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>card.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>card.classList.add('bounce-in');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>card.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showNotification(`🎯 Filtered to ${type}! Perfect choice!`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Remove animation class after animation completes</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cards.forEach(card =&gt; card.classList.remove('bounce-in'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 600);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add some random fun interactions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setInterval(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const emojis = ['🌟', '⭐', '✨', '🎉', '🚀', '💫'];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Occasionally show encouraging messages</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (Math.random() &lt; 0.1) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showNotification(`You're doing great! ${randomEmoji}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, 30000);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Create Post Modal Functions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openCreateModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('createModal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('✏️ Time to create something awesome!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeCreateModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('createModal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function selectPostType(type, button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Remove selection from all buttons</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.post-type-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.remove('ring-4', 'ring-blue-400');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Add selection to clicked button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.add('ring-4', 'ring-blue-400');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification(`📝 ${type} selected! Great choice!`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleTag(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (button.classList.contains('bg-blue-500')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.remove('bg-blue-500', 'text-white');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.add('bg-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.remove('bg-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.add('bg-blue-500', 'text-white');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function submitPost() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('🚀 Post submitted for review! You\'re making a difference!');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeCreateModal();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update dashboard stats</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const postsCount = document.querySelector('.text-yellow-300');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (postsCount) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>postsCount.textContent = parseInt(postsCount.textContent) + 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveDraft() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('💾 Draft saved! You can finish it later!');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeCreateModal();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Moderation Modal Functions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openModerateModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('moderateModal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('🛡️ Welcome to the moderation center!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModerationModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('moderateModal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function approvePost(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const postCard = button.closest('.border-2');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>postCard.style.background = 'linear-gradient(to right, #dcfce7, #bbf7d0)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>postCard.innerHTML = '&lt;div class="text-center py-8"&gt;&lt;div class="text-4xl mb-2"&gt;✅&lt;/div&gt;&lt;h3 class="text-xl font-bold text-green-600"&gt;Post Approved!&lt;/h3&gt;&lt;p class="text-green-700"&gt;This story is now live on Bears Den!&lt;/p&gt;&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('✅ Post approved! Great job keeping quality high!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function requestChanges(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const postCard = button.closest('.border-2');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>postCard.style.background = 'linear-gradient(to right, #fef3c7, #fde68a)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('✏️ Feedback sent to author for improvements!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function rejectPost(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const postCard = button.closest('.border-2');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>postCard.style.background = 'linear-gradient(to right, #fecaca, #fca5a5)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('❌ Post rejected. Author will be notified kindly!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Welcome message</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showNotification('🐻 Welcome to Bears Den! Ready for some awesome news?');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;script&gt;(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b7b5ca0410f7d2',t:'MTc1NDU3OTUyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&amp;&amp;(document.onreadystatechange=e,c())}}}})();&lt;/script&gt;&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
